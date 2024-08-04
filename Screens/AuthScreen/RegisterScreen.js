@@ -30,7 +30,16 @@ const RegisterScreen = () => {
       alert("Passwords do not match");
     }
     try{
-      apiRequests.signup(userInfo);
+      const response = await apiRequests.signup(userInfo);
+      if(response.status == 200){
+        alert("You have signed up successfully");
+      }
+      else if(response.status == 409){
+        alert("User already exists");
+      }
+      else{
+        alert("We ran into an error");
+      }
     }
     catch(error){
       console.log(error);

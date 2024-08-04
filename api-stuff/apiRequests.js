@@ -6,21 +6,40 @@ import axios from 'axios';
 
 const apiRequests = {
     signup: async (customerInfo) => {
-        const response = await axios.post(`${baseURL}/customer/signup`, customerInfo);
-        console.log('response:', response);
-        return response;
+        try{
+            const response = await axios.post(`${baseURL}/customer/signup`, customerInfo);
+            return response;
+        }
+        catch(error){
+            return error.response;
+        }
     },
     login: async (customerInfo) => {
-        const response = await axios.get(`${baseURL}/customer/login`, customerInfo);
-        return response;
+        try{
+            const response = await axios.get(`${baseURL}/customer/login`, customerInfo);
+            return response;
+            }
+        catch(error){
+            return error.response;
+        }
     },
     createBooking: async (bookingInfo) => {
+        try{
         const response = await axios.post(`${baseURL}/customer/bookings`, bookingInfo);
         return response;
+        }   
+        catch(error){
+            return error.response;
+        }
     },
     getBooking: async (bookingId) => {
-        const response = await axios.get(`${baseURL}/customer/bookings`, bookingId);
-        return response;
+        try{
+            const response = await axios.get(`${baseURL}/customer/bookings`, bookingId);
+            return response;
+        }
+        catch(error){
+            return error.response;
+        }
     },
 }
 
