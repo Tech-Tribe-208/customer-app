@@ -16,9 +16,9 @@ const apiRequests = {
     },
     login: async (customerInfo) => {
         try{
-            const response = await axios.get(`${baseURL}/customer/login`, customerInfo);
+            const response = await axios.post(`${baseURL}/customer/login`, customerInfo);
             return response;
-            }
+        }
         catch(error){
             return error.response;
         }
