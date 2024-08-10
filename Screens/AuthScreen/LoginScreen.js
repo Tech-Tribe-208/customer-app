@@ -3,10 +3,39 @@ import React, { useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
+import apiRequests from '../../api-stuff/apiRequests';
 
 const LoginScreen = () => {
-  const [isChecked, setChecked] = useState(false)
-  const navigation = useNavigation()
+  const navigation = useNavigation();
+  
+  const [usernameOrPhone, setUsernameOrPhone] = useState('');
+  const [password, setPassword] = useState('');
+
+  const userInfo = {
+    username: usernameOrPhone,
+    password: password
+  }
+
+  const login = async (userInfo) => {
+    const response = await apiRequests.login(userInfo);
+    console.log(response);
+    if(response.status === 200){
+      alert('You have logged in successfully');
+    }
+    else if(response.status === 401){
+      alert('Invalid password');
+    }
+    else if(response.status === 404){
+      alert('User not found');
+    }
+    else{
+      alert('An error occured');
+    }
+  }
+
+
+  const [isChecked, setChecked] = useState(false);
+
   return (
     <View style={{marginTop: hp(10)}}>
       <View className="pl-4 gap-1">
@@ -16,15 +45,15 @@ const LoginScreen = () => {
       {/**Input Section */}
       <View className="space-y-10" style={{marginTop: hp(6)}} >
         <View className="space-y-3">
-          <Text style={{marginLeft: wp(5)}}>Enter Phone number</Text>
+          <Text style={{marginLeft: wp(5)}}>Enter Phone number or Username</Text>
           <View className="items-center">
-            <TextInput style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='+233 2034474838'/>
+            <TextInput style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='+233 2034474838' value = {usernameOrPhone} onChangeText = {setUsernameOrPhone}/>
           </View>
         </View>
         <View className="space-y-3">
           <Text style={{marginLeft: wp(5)}}>Enter Password</Text>
           <View className="items-center">
-            <TextInput textContentType='password' style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='*********'/>
+            <TextInput textContentType='password' secureTextEntry = {true} style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='*********' value = {password} onChangeText = {setPassword}/>
           </View>
         </View>
       </View>
@@ -56,7 +85,7 @@ const LoginScreen = () => {
             <Text>Keep me signed in </Text>
           </View>
           <TouchableOpacity style={{width: wp(65), height: wp(15)}} className="bg-[#0366FF] rounded-full items-center justify-center">
-            <Text className="text-white">Login</Text>
+            <Text className="text-white">Create Account</Text>
           </TouchableOpacity>
         </View>
       </View>
