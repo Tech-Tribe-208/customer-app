@@ -95,7 +95,7 @@ const BookingServiceScreen = () => {
         </View>
         <View className="items-center mt-6">
           <TouchableOpacity onPress={()=> navigation.navigate("checkOut")} className="items-center justify-center" style={{width: wp(50), height: wp(13), backgroundColor: '#0366FF', borderRadius: 10}}>
-            <Text style={{color: 'white', fontWeight: '700', fontSize: wp(3.5)}}>Check out</Text>
+            <Text style={{color: 'white', fontWeight: '700', fontSize: wp(3.5)}}>Book now</Text>
           </TouchableOpacity>
         </View>
       </View>
