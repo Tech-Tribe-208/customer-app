@@ -5,8 +5,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import HomeScreen from '../../Screens/ProtectedScreens/HomeScreen';
 import BookingScreen from '../../Screens/ProtectedScreens/BookingScreen';
-import FavoriteScreen from '../../Screens/ProtectedScreens/FavoriteScreen';
-import NotifiactionScreen from '../../Screens/ProtectedScreens/NotifiactionScreen';
+import FavoritesScreen from '../../Screens/ProtectedScreens/FavoritesScreen';
+import NotificationsScreen from '../../Screens/ProtectedScreens/NotificationsScreen';
 import ProfileScreen from '../../Screens/ProtectedScreens/ProfileScreen';
 import { Entypo } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator()
@@ -23,9 +23,9 @@ const HomeStackNavigator = () => {
             : 'home';
         } else if (route.name === 'Booking') {
           iconName = focused ? 'book' : 'book';
-        }else if (route.name === 'Favorite') {
+        }else if (route.name === 'Favorites') {
           iconName = focused ? 'heart' : 'heart';
-        } else if (route.name === 'Notification') {
+        } else if (route.name === 'Notifications') {
           iconName = focused ? 'notifications' : 'notifications';
         } else if (route.name === 'Profile') {
           iconName = focused ? 'user' : 'user';
@@ -39,8 +39,8 @@ const HomeStackNavigator = () => {
   >
       <Tab.Screen name='Home' options={{headerShown: false}} component={HomeScreen}/>
       <Tab.Screen options={{headerShown: true, headerTitleAlign: 'center', headerLeft: ()=> <Ionicons name="chevron-back" size={24} color="black" />, headerRight: ()=> <Ionicons name="notifications-outline" size={24} color="black" />}} name='Booking' component={BookingScreen}/>
-      <Tab.Screen options={{headerShown: false}} name='Favorite' component={FavoriteScreen}/>
-      <Tab.Screen options={{headerShown: false}} name='Notification' component={NotifiactionScreen}/>
+      <Tab.Screen options={{headerShown: false}} name='Favorites' component={FavoritesScreen}/>
+      <Tab.Screen options={{headerShown: false}} name='Notifications' component={NotificationsScreen}/>
       <Tab.Screen options={{headerShown: false}} name='Profile' component={ProfileScreen} />
     </Tab.Navigator>
   )

@@ -1,11 +1,11 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const ProfileScreen = () => {
   return (
-    <View className="flex-1 bg-white">
+    <ScrollView showsVerticalScrollIndicator={false} className="flex-1 bg-white">
       <View style={{height: hp(10),alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
           <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Profile</Text>
       </View>
@@ -64,7 +64,7 @@ const ProfileScreen = () => {
           <Ionicons name="chevron-forward-sharp" size={24} color="black" />
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

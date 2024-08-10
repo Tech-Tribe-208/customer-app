@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 const HomeScreen = () => {
   const navigation = useNavigation()
   return (
-    <View style={{paddingTop: hp(5), flex: 1, backgroundColor: 'white'}}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{paddingTop: hp(5), flex: 1, backgroundColor: 'white'}}>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: wp(4)}}>
         <Image style={{height: wp(10), width: wp(10), borderRadius: wp(10)}} source={{uri: "https://miro.medium.com/v2/resize:fit:700/1*_kBjVdXlc0HxvlpD4wkMmg.jpeg"}}/>
         <Ionicons name="notifications-outline" size={24} color="black" />
@@ -74,7 +74,7 @@ const HomeScreen = () => {
       <View>
 
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
