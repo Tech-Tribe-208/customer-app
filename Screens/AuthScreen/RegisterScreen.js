@@ -1,8 +1,9 @@
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
+import { useUsercontext } from '../../context/Usercontext';
 
 const RegisterScreen = () => {
   const [isChecked, setChecked] = useState(false)

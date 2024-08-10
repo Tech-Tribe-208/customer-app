@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import ProtectedRouteNavigator from "./ProtectedRoute";
 import AuthNavigation from "./AuthRoutes";
 
-const IsAuthenticated = false;
+const IsAuthenticated = true;
 
 const AppNavigation = ()=> {
   return (

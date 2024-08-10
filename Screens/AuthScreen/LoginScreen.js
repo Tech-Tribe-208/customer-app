@@ -56,7 +56,7 @@ const LoginScreen = () => {
             <Text>Keep me signed in </Text>
           </View>
           <TouchableOpacity style={{width: wp(65), height: wp(15)}} className="bg-[#0366FF] rounded-full items-center justify-center">
-            <Text className="text-white">Create Account</Text>
+            <Text className="text-white">Login</Text>
           </TouchableOpacity>
         </View>
       </View>
