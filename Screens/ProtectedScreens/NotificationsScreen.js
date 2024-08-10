@@ -2,11 +2,11 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const NotifiactionScreen = () => {
+const NotificationsScreen = () => {
   return (
     <View className="flex-1 bg-white">
       <View style={{height: hp(10), alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
-          <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Notification</Text>
+          <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Notifications</Text>
       </View>
       <View className="px-4 items-center">
         <View style={{backgroundColor: "lightgray", padding: wp(2),width: wp(95), alignItems: 'center', borderRadius: 15, marginTop: hp(2)}}>
@@ -32,4 +32,4 @@ const NotifiactionScreen = () => {
   )
 }
 
-export default NotifiactionScreen
+export default NotificationsScreen

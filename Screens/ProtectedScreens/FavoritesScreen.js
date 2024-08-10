@@ -3,7 +3,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const FavoriteScreen = () => {
+const FavoritesScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: "white"}}>
       <View style={{height: hp(10), alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
@@ -28,7 +28,7 @@ const FavoriteScreen = () => {
         </View>
       </View>
       <View style={{marginVertical: hp(1), marginHorizontal: wp(5)}}>
-        <Text>Favorite</Text>
+        <Text>Favorites</Text>
       </View>
       <View style={{alignItems: 'center'}}>
         <View style={{flexDirection: 'row', gap: wp(5)}}>
@@ -84,4 +84,4 @@ const FavoriteScreen = () => {
   )
 }
 
-export default FavoriteScreen
+export default FavoritesScreen
