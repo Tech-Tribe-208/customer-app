@@ -22,7 +22,7 @@ const HomeScreen = () => {
           <Ionicons name="calendar-outline" size={24} color="black" />
           <Text>06/19/24,5:50 pm</Text>
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', gap: 10, height: '50%', backgroundColor: 'gray', width: "95%", borderBottomRightRadius: hp(30), paddingHorizontal: wp(5)}}>
+        <View style={{flexDirection: 'row', alignItems: 'center', gap: 10, height: '50%', backgroundColor: 'lightgray', width: "95%", borderBottomRightRadius: hp(30), paddingHorizontal: wp(5)}}>
           <View style={{paddingRight: wp(5), borderRightWidth: 2}}>
             <Text style={{fontWeight: '700', fontSize: wp(5)}}>Cleaner</Text>
             <Text style={{fontWeight: '700', fontSize: wp(5)}}>Emmanuel</Text>

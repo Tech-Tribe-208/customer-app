@@ -6,7 +6,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const FavoriteScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: "white"}}>
-      <View style={{height: hp(12), alignItems: 'center', justifyContent: 'center', backgroundColor: 'gray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
+      <View style={{height: hp(10), alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
           <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Favorites</Text>
       </View>
       <View style={{marginHorizontal: wp(7), marginTop: wp(5)}}>

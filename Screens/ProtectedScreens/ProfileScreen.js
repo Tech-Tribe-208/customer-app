@@ -5,8 +5,8 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 const ProfileScreen = () => {
   return (
-    <View>
-      <View style={{height: hp(12), alignItems: 'center', justifyContent: 'center', backgroundColor: 'gray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
+    <View className="flex-1 bg-white">
+      <View style={{height: hp(10),alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
           <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Profile</Text>
       </View>
       <View style={{marginTop:hp(2)}} className="items-center gap-3">
@@ -16,7 +16,7 @@ const ProfileScreen = () => {
         <Text>Indonesia</Text>
       </View>
       <View className="items-center">
-        <View style={{width: wp(80), marginTop: hp(2)}} className="flex-row bg-gray-400 justify-evenly p-4 rounded-xl">
+        <View style={{width: wp(90), height: wp(20), marginTop: hp(2), padding: wp(4)}} className="flex-row bg-gray-200 justify-evenly rounded-xl items-center">
           <View className="gap-2 items-center">
             <Text style={{fontWeight: '700', fontSize: wp(7)}}>26</Text>
             <Text>Transaction</Text>
@@ -34,29 +34,29 @@ const ProfileScreen = () => {
       <View className="px-8 py-2">
         <Text>Option</Text>
       </View>
-      <View className="items-center gap-4">
-        <View style={{width: wp(80)}} className="flex-row items-center justify-between bg-gray-400 p-4 rounded-xl">
+      <View style={{gap: wp(4)}} className="items-center">
+        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
           <View className="flex-row items-center space-x-4">
             <AntDesign name="hearto" size={24} color="black" />
             <Text>My favorite</Text>
           </View>
           <Ionicons name="chevron-forward-sharp" size={24} color="black" />
         </View>
-        <View style={{width: wp(80)}} className="flex-row items-center justify-between bg-gray-400 p-4 rounded-xl">
+        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
           <View className="flex-row items-center space-x-4">
             <Ionicons name="time-outline" size={24} color="black" />
             <Text>Transaction</Text>
           </View>
           <Ionicons name="chevron-forward-sharp" size={24} color="black" />
         </View>
-        <View style={{width: wp(80)}} className="flex-row items-center justify-between bg-gray-400 p-4 rounded-xl">
+        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
           <View className="flex-row items-center space-x-4">
             <AntDesign name="gift" size={24} color="black" />
             <Text>My Coupon</Text>
           </View>
           <Ionicons name="chevron-forward-sharp" size={24} color="black" />
         </View>
-        <View style={{width: wp(80)}} className="flex-row items-center justify-between bg-gray-400 p-4 rounded-xl">
+        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
           <View className="flex-row items-center space-x-4">
           <MaterialIcons name="logout" size={24} color="red" />
             <Text className="text-rose-600">Logout</Text>

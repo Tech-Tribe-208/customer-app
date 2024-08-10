@@ -8,8 +8,8 @@ const RegisterScreen = () => {
   const [isChecked, setChecked] = useState(false)
   const navigation = useNavigation()
   return (
-    <View style={{marginTop: hp(7)}}>
-      <View className="items-center gap-1">
+    <View style={{paddingBottom: hp(3)}} className="bg-white flex-1 justify-evenly">
+      <View style={{marginTop: hp(5)}} className="items-center gap-1">
         <Text style={{fontSize: 20, fontWeight: '500'}}>Create an account</Text>
         <Text>Enter your email to sign up for this app</Text>
       </View>
@@ -40,7 +40,7 @@ const RegisterScreen = () => {
           </View>
         </View>
       </View>
-      <View className="items-end px-4 pt-2"><TouchableOpacity onPress={()=> navigation.navigate("login")}><Text className="text-blue-600">Login <Text>Instead</Text></Text></TouchableOpacity></View>
+      <View style={{paddingTop: hp(1)}} className="items-end px-4"><TouchableOpacity onPress={()=> navigation.navigate("login")}><Text className="text-blue-600">Login <Text>Instead</Text></Text></TouchableOpacity></View>
       <View className="items-center px-6">
         <View style={{marginVertical: hp(2)}} className="items-center flex-row">
           <View style={{width: wp(20), height: 1}} className="bg-slate-600" />
