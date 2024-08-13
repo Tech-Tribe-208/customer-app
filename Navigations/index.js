@@ -3,7 +3,7 @@ import ProtectedRouteNavigator from "./ProtectedRoute";
 import AuthNavigation from "./AuthRoutes";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 
-const IsAuthenticated = true;
+const IsAuthenticated = false;
 
 const AppNavigation = ()=> {
   return (

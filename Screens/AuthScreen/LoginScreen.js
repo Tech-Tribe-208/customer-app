@@ -47,7 +47,7 @@ const LoginScreen = () => {
         <View className="space-y-3">
           <Text style={{marginLeft: wp(5)}}>Enter Phone number or Username</Text>
           <View className="items-center">
-            <TextInput style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='+233 2034474838' value = {usernameOrPhone} onChangeText = {setUsernameOrPhone}/>
+            <TextInput style={{borderWidth: 1, borderColor: 'gray', paddingVertical: wp(3.5),paddingHorizontal: wp(1), width: wp(90), borderRadius: wp(2)}} placeholder='Username or Phone number' value = {usernameOrPhone} onChangeText = {setUsernameOrPhone}/>
           </View>
         </View>
         <View className="space-y-3">
@@ -84,8 +84,8 @@ const LoginScreen = () => {
               />
             <Text>Keep me signed in </Text>
           </View>
-          <TouchableOpacity style={{width: wp(65), height: wp(15)}} className="bg-[#0366FF] rounded-full items-center justify-center">
-            <Text className="text-white">Create Account</Text>
+          <TouchableOpacity onPress={()=> navigation.navigate("home")} style={{width: wp(65), height: wp(15)}} className="bg-[#0366FF] rounded-full items-center justify-center">
+            <Text className="text-white">Login</Text>
           </TouchableOpacity>
         </View>
       </View>

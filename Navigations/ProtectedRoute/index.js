@@ -12,7 +12,7 @@ const ProtectedRouteNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="splash" component={Splash}/>
-      <Stack.Screen name="HomeRoute" component={HomeStackNavigator} />
+      <Stack.Screen name="home-route" component={HomeStackNavigator} />
       <Stack.Screen name="service-detail" component={ServiceDetailScreen} />
       <Stack.Screen name="book-service" component={BookingServiceScreen} />
       <Stack.Screen name="checkOut" component={CheckoutScreen} />

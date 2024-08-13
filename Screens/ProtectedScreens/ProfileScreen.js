@@ -1,9 +1,11 @@
-import { View, Text, Image, ScrollView } from 'react-native'
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation()
   return (
     <ScrollView showsVerticalScrollIndicator={false} className="flex-1 bg-white">
       <View style={{height: hp(10),alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightgray', width: wp(100),borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5)}}>
@@ -35,34 +37,42 @@ const ProfileScreen = () => {
         <Text>Option</Text>
       </View>
       <View style={{gap: wp(4)}} className="items-center">
-        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
-          <View className="flex-row items-center space-x-4">
-            <AntDesign name="hearto" size={24} color="black" />
-            <Text>My favorite</Text>
+        <TouchableOpacity>
+          <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
+            <View className="flex-row items-center space-x-4">
+              <AntDesign name="hearto" size={24} color="black" />
+              <Text>My favorite</Text>
+            </View>
+            <Ionicons name="chevron-forward-sharp" size={24} color="black" />
           </View>
-          <Ionicons name="chevron-forward-sharp" size={24} color="black" />
-        </View>
-        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
-          <View className="flex-row items-center space-x-4">
-            <Ionicons name="time-outline" size={24} color="black" />
-            <Text>Transaction</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
+            <View className="flex-row items-center space-x-4">
+              <Ionicons name="time-outline" size={24} color="black" />
+              <Text>Transaction</Text>
+            </View>
+            <Ionicons name="chevron-forward-sharp" size={24} color="black" />
           </View>
-          <Ionicons name="chevron-forward-sharp" size={24} color="black" />
-        </View>
-        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
-          <View className="flex-row items-center space-x-4">
-            <AntDesign name="gift" size={24} color="black" />
-            <Text>My Coupon</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
+            <View className="flex-row items-center space-x-4">
+              <AntDesign name="gift" size={24} color="black" />
+              <Text>My Coupon</Text>
+            </View>
+            <Ionicons name="chevron-forward-sharp" size={24} color="black" />
           </View>
-          <Ionicons name="chevron-forward-sharp" size={24} color="black" />
-        </View>
-        <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
-          <View className="flex-row items-center space-x-4">
-          <MaterialIcons name="logout" size={24} color="red" />
-            <Text className="text-rose-600">Logout</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate("log-out")}>
+          <View style={{width: wp(90), padding: wp(4)}} className="flex-row items-center justify-between bg-gray-200 rounded-xl">
+            <View className="flex-row items-center space-x-4">
+            <MaterialIcons name="logout" size={24} color="red" />
+              <Text className="text-rose-600">Logout</Text>
+            </View>
+            <Ionicons name="chevron-forward-sharp" size={24} color="black" />
           </View>
-          <Ionicons name="chevron-forward-sharp" size={24} color="black" />
-        </View>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   )
