@@ -1,36 +1,104 @@
-import { View, Text, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const BookingScreen = () => {
-  const navigation = useNavigation()
+const BookingServiceScreen = () => {
+  const navigation = useNavigation();
+  const [selectedNumber, setSelectedNumber] = useState(1); // Default to 1
+
+  const handleNumberPress = (number) => {
+    setSelectedNumber(number);
+  };
+
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1, backgroundColor: 'white'}}>
-        <View style={{flexDirection: 'row', justifyContent: 'center', marginHorizontal: 20}}>
-          <Image style={{height: wp(30), width: wp(30), borderTopLeftRadius: 45, borderBottomRightRadius: 45}} source={{uri: "https://ca-times.brightspotcdn.com/dims4/default/eb40ae9/2147483647/strip/true/crop/2048x1152+0+0/resize/1200x675!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff7%2F91%2Fb9e47d4d3fed8242a988b9ae5843%2Fla-miwood-1481819343-snap-photo"}}/>
-          <View style={{justifyContent: 'center', width: wp(65), gap: 4, marginLeft: 10}}>
-            <Text style={{marginLeft: 20, fontSize: 20}}>Favour</Text>
-            <Text>i’ve been specialising for office claening
-            for over three years</Text>
+    <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="flex-1 bg-white">
+        <View style={{ height: hp(12), alignItems: 'center', justifyContent: 'center', backgroundColor: 'gray', width: wp(100), borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5) }}>
+          <Text style={{ color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2) }}>Booking Service</Text>
+        </View>
+        <View style={{ marginVertical: hp(2), paddingHorizontal: wp(2) }}>
+          <Text>How many hours do you expect the cleaning experts to stay?</Text>
+        </View>
+        <View className="items-center">
+          <View style={{ width: wp(97), gap: 2 }} className="bg-gray-400 p-1 rounded-xl flex-row">
+            {[...Array(9)].map((_, index) => {
+              const number = index + 1;
+              return (
+                <TouchableOpacity
+                  key={number}
+                  className="rounded-full items-center justify-center"
+                  style={{
+                    width: wp(10),
+                    height: wp(10),
+                    backgroundColor: selectedNumber === number ? 'grey' : 'white',
+                  }}
+                  onPress={() => handleNumberPress(number)}
+                >
+                  <Text style={{ color: selectedNumber === number ? 'white' : 'black' }}>{number}</Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </View>
-        <View>
-          <Text style={{fontSize: 24, fontWeight: '700', marginVertical: hp(2), marginLeft: wp(5)}}>Space size</Text>
+        <View style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray', marginHorizontal: wp(4) }}>
+          <Text>Choose Date & Time</Text>
         </View>
-        <View>
-          <Image style={{width: wp(100), height: hp(65)}} source={require("../../assets/Rectangle 9.png")}/>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', position: 'absolute', width: wp(70), paddingHorizontal: wp(4), height: hp(5),backgroundColor: 'gray', marginTop: hp(3), left: wp(10), alignItems: 'center', borderRadius: 20}}>
-            <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>20ft</Text>
-            <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>20ft</Text>
-          </View>
-          <Image style={{position: 'absolute',marginTop: hp(12), left: wp(1.5)}} source={require("../../assets/calendar.png")}/>
-          <TouchableOpacity onPress={()=> navigation.navigate("book-service")} style={{justifyContent: 'center', position: 'absolute', width: wp(70),height: hp(5),backgroundColor: 'gray', left: wp(15), alignItems: 'center', borderRadius: 20, bottom: hp(8)}}>
-            <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>Book        Now</Text>
+        <View className="flex-row justify-around" style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray', marginHorizontal: wp(4) }}>
+          <TouchableOpacity style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
+            <Ionicons name="calendar-outline" size={24} color="black" />
+            <Text style={{ fontWeight: '700' }}>Choose Date</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
+            <EvilIcons name="clock" size={24} color="black" />
+            <Text style={{ fontWeight: '700' }}>Choose Time</Text>
           </TouchableOpacity>
         </View>
+        <View className="flex-row justify-between items-center" style={{ marginTop: hp(2), marginHorizontal: wp(4) }}>
+          <Text>Confirm Address</Text>
+          <Image source={require("../../assets/Place Marker.png")} />
+        </View>
+        <View className="items-center" style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray' }}>
+          <View style={{ width: wp(95), padding: wp(1.5), height: hp(10) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
+            <Text> Office Location: House No. 11 East Legon.</Text>
+          </View>
+        </View>
+        <View className="bg-gray-400 flex-1 p-2">
+          <View className="pb-4">
+            <Text style={{ fontWeight: '700' }}>Service Price</Text>
+          </View>
+          <View className="space-y-5">
+            <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
+              <Text style={{ fontWeight: 'bold' }}>Price</Text>
+              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+            </View>
+            <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
+              <Text style={{ fontWeight: 'bold' }}>Hours</Text>
+              <Text style={{ fontWeight: 'bold' }}>{selectedNumber}</Text>
+            </View>
+            <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
+              <Text style={{ fontWeight: 'bold' }}>Material Usage</Text>
+              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+            </View>
+            <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
+              <Text style={{ fontWeight: 'bold' }}>Tax</Text>
+              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+            </View>
+            <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
+              <Text style={{ fontWeight: 'bold', color: 'white' }}>Total Price</Text>
+              <Text style={{ fontWeight: 'bold', color: 'white' }}>$300</Text>
+            </View>
+          </View>
+          <View className="items-center mt-6">
+            <TouchableOpacity onPress={() => navigation.navigate("checkOut")} className="items-center justify-center" style={{ width: wp(50), height: wp(13), backgroundColor: '#0366FF', borderRadius: 10 }}>
+              <Text style={{ color: 'white', fontWeight: '700', fontSize: wp(3.5) }}>Book now</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default BookingScreen
+export default BookingServiceScreen;

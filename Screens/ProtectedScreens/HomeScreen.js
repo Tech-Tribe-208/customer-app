@@ -54,7 +54,7 @@ const HomeScreen = () => {
           <Text style={{fontSize: 14, fontWeight: '700'}}>Office Cleaning</Text>
         </View>
       </View>
-      <View style={{flexDirection: 'row', justifyContent:"space-around", alignItems: 'center'}}>
+      {/* <View style={{flexDirection: 'row', justifyContent:"space-around", alignItems: 'center'}}>
         <View style={{ alignItems: 'center'}}>
           <Image style={{height: wp(17), width: wp(17), borderRadius: 25}} source={{uri: "https://ca-times.brightspotcdn.com/dims4/default/eb40ae9/2147483647/strip/true/crop/2048x1152+0+0/resize/1200x675!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff7%2F91%2Fb9e47d4d3fed8242a988b9ae5843%2Fla-miwood-1481819343-snap-photo"}}/>
           <Text>Edward</Text>
@@ -70,7 +70,7 @@ const HomeScreen = () => {
           <Text>favour</Text>
           <Text>Dusting</Text>
         </View>
-      </View>
+      </View> */}
       <View>
 
       </View>
