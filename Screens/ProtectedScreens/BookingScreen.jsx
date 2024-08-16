@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ScrollView, Linking, Pressable, Platform } from 'react-native';
 import React, { useState } from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const BookingServiceScreen = () => {
   const navigation = useNavigation();
@@ -12,12 +13,50 @@ const BookingServiceScreen = () => {
     setSelectedNumber(number);
   };
 
+  const address = 'Botchway Nanakrom Melcom';
+  const businessRoute = 'http://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+
+ 
+
+  const toMap = () => {
+    return Linking.openURL(businessRoute);
+  }
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState({
+    dateMode: '',
+    timeMode: ''
+  });
+  const [show, setShow] = useState(false)
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatePicker = () => {
+    console.log("clicked");
+    setMode((prev)=> (({
+      ...prev,
+      dateMode: "date",
+    })));
+  };
+
+  const showTimePicker = () => {
+    setMode((prev)=> (({
+      ...prev,
+      timeMode: "time",
+    })));
+  };
+
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex-1 bg-white">
-        <View style={{ height: hp(12), alignItems: 'center', justifyContent: 'center', backgroundColor: 'gray', width: wp(100), borderBottomRightRadius: wp(5), borderBottomLeftRadius: wp(5) }}>
-          <Text style={{ color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2) }}>Booking Service</Text>
-        </View>
         <View style={{ marginVertical: hp(2), paddingHorizontal: wp(2) }}>
           <Text>How many hours do you expect the cleaning experts to stay?</Text>
         </View>
@@ -45,19 +84,40 @@ const BookingServiceScreen = () => {
         <View style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray', marginHorizontal: wp(4) }}>
           <Text>Choose Date & Time</Text>
         </View>
-        <View className="flex-row justify-around" style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray', marginHorizontal: wp(4) }}>
-          <TouchableOpacity style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
-            <Ionicons name="calendar-outline" size={24} color="black" />
-            <Text style={{ fontWeight: '700' }}>Choose Date</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
-            <EvilIcons name="clock" size={24} color="black" />
-            <Text style={{ fontWeight: '700' }}>Choose Time</Text>
-          </TouchableOpacity>
+        <View className="flex-row justify-between" style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray', marginHorizontal: wp(4) }}>
+          <View className="space-y-2 items-center">
+            <TouchableOpacity onPress={showDatePicker} style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
+              <Ionicons name="calendar-outline" size={24} color="black" />
+              <Text style={{ fontWeight: '700' }}>Choose Date</Text>
+            </TouchableOpacity>
+              {mode.dateMode === 'date' && <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"date"}
+                is24Hour={true}
+                display="default"
+                onChange={onChange}
+              />}
+          </View>
+          <View className="space-y-2 items-center">
+            <TouchableOpacity onPress={showTimePicker} style={{ width: wp(40), padding: wp(1.5) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
+              <EvilIcons name="clock" size={24} color="black" />
+              <Text style={{ fontWeight: '700' }}>Choose Time</Text>
+            </TouchableOpacity>
+            {mode.timeMode === "time" && <DateTimePicker
+                testID="dateTimePicker"
+                value={date}
+                mode={"time"}
+                is24Hour={true}
+                display="default"
+                onChange={onChange}
+              />}
+          </View>
+          
         </View>
         <View className="flex-row justify-between items-center" style={{ marginTop: hp(2), marginHorizontal: wp(4) }}>
-          <Text>Confirm Address</Text>
-          <Image source={require("../../assets/Place Marker.png")} />
+          <Text onPress={() =>toMap()}>Confirm Address</Text>
+         <Pressable onPress={() =>toMap()}><Image source={require("../../assets/Place Marker.png")} /></Pressable> 
         </View>
         <View className="items-center" style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray' }}>
           <View style={{ width: wp(95), padding: wp(1.5), height: hp(10) }} className="flex-row items-center space-x-2 bg-gray-400 justify-center rounded-xl">
