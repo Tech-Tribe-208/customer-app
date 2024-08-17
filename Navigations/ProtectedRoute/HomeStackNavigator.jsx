@@ -30,7 +30,7 @@ const HomeStackNavigator = () => {
         } else if (route.name === 'Profile') {
           iconName = focused ? 'user' : 'user';
         }
-        // You can return any component that you like here!
+        
         return route.name === 'Profile' ? <Entypo name={iconName} size={size} color={color} /> : <Ionicons name={iconName} size={size} color={color} />;
       },
       tabBarActiveTintColor: 'tomato',
@@ -38,7 +38,7 @@ const HomeStackNavigator = () => {
     })}
   >
       <Tab.Screen name='Home' options={{headerShown: false}} component={HomeScreen}/>
-      <Tab.Screen options={{headerShown: true, headerTitleAlign: 'center', headerLeft: ()=> <Ionicons name="chevron-back" size={24} color="black" />, headerRight: ()=> <Ionicons name="notifications-outline" size={24} color="black" />}} name='Booking' component={BookingScreen}/>
+      <Tab.Screen options={{headerShown: true, headerTitleAlign: 'center', headerRight: ()=> <Ionicons name="notifications-outline" size={24} color="black" />}} name='Booking' component={BookingScreen}/>
       <Tab.Screen options={{headerShown: false}} name='Favorites' component={FavoritesScreen}/>
       <Tab.Screen options={{headerShown: false}} name='Notifications' component={NotificationsScreen}/>
       <Tab.Screen options={{headerShown: false}} name='Profile' component={ProfileScreen} />

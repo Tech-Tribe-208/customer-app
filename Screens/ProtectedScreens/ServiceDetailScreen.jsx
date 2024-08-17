@@ -11,7 +11,7 @@ const ServiceDetailScreen = () => {
               <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Checkout</Text>
           </View>
           <View style={{marginTop: hp(2)}} className="items-center">
-            <Image style={{width: wp(95), height: hp(20)}} source={{uri: "https://people.com/thmb/GhSXAE2odbpELJoJKpUeOx89-SU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(879x492:881x494)/post-malone-62ea2dfabe444702ac4f498aee63532f.jpg"}}/>
+            <Image style={{width: wp(95), height: hp(20)}} source={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtmeszfGDUpOT1-BtmNbEd8rxvFSpeuT3wvQ&s"}}/>
           </View>
           <View className="px-4">
             <View style={{ paddingVertical: hp(2), borderBottomWidth: 1, borderColor: 'lightgray' }}>

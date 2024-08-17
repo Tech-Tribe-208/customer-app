@@ -12,10 +12,10 @@ const ProfileScreen = () => {
           <Text style={{color: 'white', fontWeight: '600', fontSize: wp(5), marginTop: hp(2)}}>Profile</Text>
       </View>
       <View style={{marginTop:hp(2)}} className="items-center gap-3">
-        <Image style={{height: wp(20), width: wp(20), borderRadius: wp(20)}} source={{uri: "https://platform.vox.com/wp-content/uploads/sites/2/2024/06/gettyimages-2155929715.jpg?quality=90&strip=all&crop=0%2C27.777777777778%2C100%2C44.444444444444&w=2400"}}/>
-        <Text className="font-bold">Marrine Gustav</Text>
-        <Text>Purwokerto</Text>
-        <Text>Indonesia</Text>
+        <Image style={{height: wp(20), width: wp(20), borderRadius: wp(20)}} source={{uri: "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0="}}/>
+        <Text className="font-bold">Username</Text>
+        <Text>Accra</Text>
+        <Text>Ghana</Text>
       </View>
       <View className="items-center">
         <View style={{width: wp(90), height: wp(20), marginTop: hp(2), padding: wp(4)}} className="flex-row bg-gray-200 justify-evenly rounded-xl items-center">

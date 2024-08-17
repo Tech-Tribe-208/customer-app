@@ -9,7 +9,7 @@ const HomeScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{paddingTop: hp(5), flex: 1, backgroundColor: 'white'}}>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: wp(4)}}>
-        <Image style={{height: wp(10), width: wp(10), borderRadius: wp(10)}} source={{uri: "https://miro.medium.com/v2/resize:fit:700/1*_kBjVdXlc0HxvlpD4wkMmg.jpeg"}}/>
+        <Image style={{height: wp(10), width: wp(10), borderRadius: wp(10)}} source={{uri: "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0="}}/>
         <Ionicons name="notifications-outline" size={24} color="black" />
       </View>
       <View style={{alignItems: 'center', gap: 10, marginTop: hp(1)}}>
@@ -53,6 +53,9 @@ const HomeScreen = () => {
           <Image source={require("../../assets/Clean.png")}/>
           <Text style={{fontSize: 14, fontWeight: '700'}}>Office Cleaning</Text>
         </View>
+      </View>
+      <View style={{paddingLeft:30}}>
+          <Image source={require("../../assets/Picture1.png")}/>
       </View>
       {/* <View style={{flexDirection: 'row', justifyContent:"space-around", alignItems: 'center'}}>
         <View style={{ alignItems: 'center'}}>
