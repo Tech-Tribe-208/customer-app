@@ -115,7 +115,7 @@ const BookingServiceScreen = () => {
         <View className="space-y-5">
           <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
             <Text style={{ fontWeight: 'bold' }}>Price</Text>
-            <Text style={{ fontWeight: 'bold' }}>$300</Text>
+            <Text style={{ fontWeight: 'bold' }}>GH₵300</Text>
           </View>
           <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
             <Text style={{ fontWeight: 'bold' }}>Hours</Text>

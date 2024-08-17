@@ -131,7 +131,7 @@ const BookingServiceScreen = () => {
           <View className="space-y-5">
             <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
               <Text style={{ fontWeight: 'bold' }}>Price</Text>
-              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+              <Text style={{ fontWeight: 'bold' }}>GH₵300</Text>
             </View>
             <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
               <Text style={{ fontWeight: 'bold' }}>Hours</Text>
@@ -139,15 +139,15 @@ const BookingServiceScreen = () => {
             </View>
             <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
               <Text style={{ fontWeight: 'bold' }}>Material Usage</Text>
-              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+              <Text style={{ fontWeight: 'bold' }}>GH₵270</Text>
             </View>
             <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
               <Text style={{ fontWeight: 'bold' }}>Tax</Text>
-              <Text style={{ fontWeight: 'bold' }}>$300</Text>
+              <Text style={{ fontWeight: 'bold' }}>GH₵30</Text>
             </View>
             <View style={{ marginHorizontal: wp(15) }} className="flex-row items-center justify-between">
               <Text style={{ fontWeight: 'bold', color: 'white' }}>Total Price</Text>
-              <Text style={{ fontWeight: 'bold', color: 'white' }}>$300</Text>
+              <Text style={{ fontWeight: 'bold', color: 'white' }}>GH₵600</Text>
             </View>
           </View>
           <View className="items-center mt-6">

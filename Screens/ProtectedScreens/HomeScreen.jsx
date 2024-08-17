@@ -29,7 +29,7 @@ const HomeScreen = () => {
           </View>
           <View style={{paddingRight: wp(5), borderRightWidth: 2}}>
             <Text style={{fontWeight: '700', fontSize: wp(5)}}>Price</Text>
-            <Text style={{fontWeight: '700', fontSize: wp(5)}}>$104</Text>
+            <Text style={{fontWeight: '700', fontSize: wp(5)}}>GH₵150</Text>
           </View>
           <View>
             <Text style={{fontWeight: '700', fontSize: wp(5)}}>Room</Text>
