@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
+import apiRequests from '../../api-stuff/apiRequests';
 
 const RegisterScreen = () => {
   const navigation = useNavigation();
@@ -30,6 +31,7 @@ const RegisterScreen = () => {
     }
     try{
       const response = await apiRequests.signup(userInfo);
+      console.log(response);
       if(response.status == 200){
         alert("You have signed up successfully");
       }

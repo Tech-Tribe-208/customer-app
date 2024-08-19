@@ -7,7 +7,8 @@ import axios from 'axios';
 const apiRequests = {
     signup: async (customerInfo) => {
         try{
-            const response = await axios.post(`${baseURL}/customer/signup`, customerInfo);
+            console.log(customerInfo);
+            const response = await axios.get(`${baseURL}/customer/signup`, customerInfo);
             return response;
         }
         catch(error){
@@ -43,4 +44,4 @@ const apiRequests = {
     },
 }
 
-module.exports = apiRequests;
+export default apiRequests;
